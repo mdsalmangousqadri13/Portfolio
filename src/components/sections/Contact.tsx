@@ -14,11 +14,17 @@ export default function Contact() {
 
     try {
       const templateParams = {
+        // from_name: formState.name,
+        // from_email: formState.email,
+        // reply_to: formState.email,
+        // to_name: 'Salman',
+        // message: formState.message,
         from_name: formState.name,
         from_email: formState.email,
         reply_to: formState.email,
         to_name: 'Salman',
         message: formState.message,
+        sender_email: formState.email
       };
 
       await emailjs.send(
