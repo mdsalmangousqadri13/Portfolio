@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 import { cn } from '../../lib/utils';
@@ -9,6 +9,7 @@ const navLinks = [
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Education', href: '#education' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -24,22 +25,42 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleMobileClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      setIsMobileMenuOpen(false);
+      
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent',
-        isScrolled ? 'glass py-3 border-zinc-800/50 shadow-lg' : 'bg-transparent py-5'
+        isScrolled ? 'glass py-2 border-zinc-800/50 shadow-lg' : 'bg-transparent py-3.5'
       )}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24 flex items-center justify-between">
+      <div className="w-full pl-4 pr-6 sm:px-12 lg:px-16 flex items-center justify-between">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-xl font-bold tracking-tighter"
+          className="text-xl font-bold tracking-tighter ml-0 md:ml-9"
         >
           <a href="#hero" className="flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-sm">JS</span>
-            <span className="hidden sm:inline-block">Portfolio</span>
+            <img
+              src="/MSGQ Logo.png"
+              alt="MSGQ Logo"
+              className="h-12 w-auto object-contain hover:scale-105 active:scale-95 transition-transform duration-200"
+            />
           </a>
         </motion.div>
 
@@ -102,16 +123,35 @@ export default function Navbar() {
                   href={link.href}
                   target={link.href.endsWith('.pdf') ? '_blank' : undefined}
                   rel={link.href.endsWith('.pdf') ? 'noopener noreferrer' : undefined}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleMobileClick(e, link.href)}
                   className="text-sm py-2 text-zinc-400 hover:text-white transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
               <div className="flex items-center gap-6 mt-4 pt-4 border-t border-zinc-800">
-                <a href="#"><Github size={20} /></a>
-                <a href="#"><Linkedin size={20} /></a>
-                <a href="#"><Mail size={20} /></a>
+                <a 
+                  href="https://github.com/mdsalmangousqadri13" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-zinc-400 hover:text-white transition-colors"
+                >
+                  <Github size={20} />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/mdsalmangous/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-zinc-400 hover:text-white transition-colors"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a 
+                  href="mailto:salmanjmu13@gmail.com" 
+                  className="text-zinc-400 hover:text-white transition-colors"
+                >
+                  <Mail size={20} />
+                </a>
               </div>
             </div>
           </motion.div>

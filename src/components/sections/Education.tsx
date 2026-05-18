@@ -6,8 +6,15 @@ const education = [
     degree: 'B.Tech in Computer Science Engineering',
     institution: 'I.K. Guzral Punjab Technical University',
     duration: '2022 - 2026',
-    //  grade: 'GPA: 8.5/10',
+    grade: 'GPA: 8.5/10',
     description: 'Specialized in Full Stack Development and Software Engineering principles. Core coursework included Data Structures, Algorithms, DBMS, and OS.',
+  },
+  {
+    degree: 'Intermediate',
+    institution: 'K.K.M College, Jamui',
+    duration: '2019 - 2021',
+    percentage: '68.8%',
+    description: 'Completed Intermediate (Science with Mathematics), building a strong foundation in analytical thinking and problem-solving while exploring technology and software development.',
   },
 ];
 
@@ -52,10 +59,12 @@ export default function Education() {
                   <p className="text-indigo-400 font-medium">{edu.institution}</p>
                 </div>
 
-                <div className="flex items-center gap-2 text-emerald-400 text-sm font-mono">
-                   <BookOpen size={14} />
-                   {/* {edu.grade} */}
-                </div>
+                {(edu.grade || edu.percentage) && (
+                  <div className="flex items-center gap-2 text-emerald-400 text-sm font-semibold font-mono bg-emerald-500/5 border border-emerald-500/10 px-3.5 py-1 rounded-xl w-fit">
+                    <BookOpen size={14} />
+                    <span>{edu.grade || `Percentage: ${edu.percentage}`}</span>
+                  </div>
+                )}
 
                 <p className="text-zinc-400 leading-relaxed">
                   {edu.description}

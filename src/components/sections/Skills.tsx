@@ -59,8 +59,17 @@ const skillCategories = [
       { name: 'Socket.io', level: 70 },
       { name: 'VS Code', level: 95 },
       { name: 'Docker', level: 70 },
+      { name: 'EmailJS', level: 70 },
     ]
   }
+];
+
+const categoryColors = [
+  { text: "text-indigo-400", bg: "bg-indigo-500/10", bar: "bg-indigo-500", check: "text-indigo-500" }, // Frontend
+  { text: "text-cyan-400", bg: "bg-cyan-500/10", bar: "bg-cyan-500", check: "text-cyan-500" },       // Backend
+  { text: "text-emerald-400", bg: "bg-emerald-500/10", bar: "bg-emerald-500", check: "text-emerald-500" }, // Database
+  { text: "text-amber-400", bg: "bg-amber-500/10", bar: "bg-amber-400", check: "text-amber-500" },   // Cloud & DevOps (AWS Amber)
+  { text: "text-purple-400", bg: "bg-purple-500/10", bar: "bg-purple-500", check: "text-purple-500" }, // Tools & Others
 ];
 
 export default function Skills() {
@@ -82,51 +91,52 @@ export default function Skills() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillCategories.map((category, catIdx) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: catIdx * 0.1 }}
-              className="glass p-8 rounded-3xl border-zinc-800/50 space-y-6"
-            >
-              <div className="flex items-center gap-4 border-b border-zinc-800 pb-4">
-                <div className="p-3 bg-indigo-500/10 rounded-2xl">
-                  <category.icon size={24} className="text-indigo-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white tracking-tight">{category.title}</h3>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {category.skills.map((skill, skillIdx) => (
-                  <div key={skill.name} className="space-y-3">
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-zinc-300 font-medium flex items-center gap-2">
-                        <CheckCircle2 size={14} className="text-indigo-500" />
-                        {skill.name}
-                      </span>
-                      <span className="font-mono text-zinc-500">{skill.level}%</span>
-                    </div>
-                    <div className="h-1.5 w-full bg-zinc-900 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.5 + skillIdx * 0.1 }}
-                        className={cn(
-                          "h-full rounded-full transition-all duration-1000",
-                          catIdx === 0 ? "bg-indigo-500" :
-                            catIdx === 1 ? "bg-cyan-500" :
-                              catIdx === 2 ? "bg-emerald-500" : "bg-zinc-500"
-                        )}
-                      />
-                    </div>
+          {skillCategories.map((category, catIdx) => {
+            const colors = categoryColors[catIdx] || categoryColors[0];
+            return (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: catIdx * 0.1 }}
+                className="glass p-8 rounded-3xl border-zinc-800/50 space-y-6"
+              >
+                <div className="flex items-center gap-4 border-b border-zinc-800 pb-4">
+                  <div className={cn("p-3 rounded-2xl", colors.bg)}>
+                    <category.icon size={24} className={colors.text} />
                   </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                  <h3 className="text-xl font-bold text-white tracking-tight">{category.title}</h3>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {category.skills.map((skill, skillIdx) => (
+                    <div key={skill.name} className="space-y-3">
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="text-zinc-300 font-medium flex items-center gap-2">
+                          <CheckCircle2 size={14} className={colors.check} />
+                          {skill.name}
+                        </span>
+                        <span className="font-mono text-zinc-500">{skill.level}%</span>
+                      </div>
+                      <div className="h-1.5 w-full bg-zinc-900 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: 0.5 + skillIdx * 0.1 }}
+                          className={cn(
+                            "h-full rounded-full transition-all duration-1000",
+                            colors.bar
+                          )}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>

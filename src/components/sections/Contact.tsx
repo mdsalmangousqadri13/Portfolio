@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 
@@ -91,9 +91,8 @@ export default function Contact() {
 
           <div className="flex gap-4 pt-4">
             {[
-              { icon: Github, href: 'https://github.com' },
-              { icon: Linkedin, href: 'https://linkedin.com' },
-              { icon: Twitter, href: 'https://twitter.com' },
+              { icon: Github, href: 'https://github.com/mdsalmangousqadri13' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/mdsalmangous/' },
             ].map((social, i) => (
               <motion.a
                 key={i}

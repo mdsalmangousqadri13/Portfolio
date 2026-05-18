@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { User, Code2, Rocket, Brain } from 'lucide-react';
 
 const stats = [
-  { label: 'Years Experience', value: 'Fresh', icon: Rocket },
+  { label: 'Experience', value: 'Open to Opportunities', icon: Rocket },
   { label: 'Projects Completed', value: '10+', icon: Code2 },
   { label: 'Tech Stacks', value: '3+', icon: Brain },
 ];
