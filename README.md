@@ -1,20 +1,85 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🌐 Personal Portfolio
 
-# Run and deploy your AI Studio app
+A modern and responsive developer portfolio built to showcase my skills, projects, experience, and contact information.
 
-This contains everything you need to run your app locally.
+## 🚀 Live Demo
+🔗 [Visit Portfolio](https://your-portfolio-link.com)
 
-View your app in AI Studio: https://ai.studio/apps/f66033df-4342-4504-af07-b5d92e59f707
+## 📌 Features
 
-## Run Locally
+- Responsive Design (Mobile Friendly)
+- Smooth Animations & Modern UI
+- About Me Section
+- Skills & Tech Stack
+- Projects Showcase
+- Contact Form with EmailJS
+- Resume Download Option
+- Social Media Links
 
-**Prerequisites:**  Node.js
+## 🛠️ Tech Stack
 
+### Frontend
+- React.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Tools & Services
+- EmailJS
+- Git & GitHub
+- Vercel / Netlify
+
+## 📂 Project Structure
+
+```bash
+portfolio/
+│── public/
+│── src/
+│   ├── components/
+│   ├── pages/
+│   ├── assets/
+│   └── App.tsx
+│── package.json
+│── README.md
+```
+
+## 💻 Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/portfolio.git
+```
+
+Go to project folder:
+
+```bash
+cd portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the project:
+
+```bash
+npm run dev
+```
+
+## 📬 Contact
+
+📧 Email: [Email](Salmanjmu13@gmail.com)
+💼 LinkedIn: [LinkedIn](https://www.linkedin.com/in/mdsalmangous/)  
+🐙 GitHub: [Github](https://github.com/mdsalmangousqadri13)
+
+## 👨‍💻 Author
+
+**Md Salman Gous Qadri**  
+Full Stack Developer | MERN Stack Developer
+
+---
+
+⭐ If you like this project, don't forget to star the repository.
