@@ -22,18 +22,18 @@ export default function Footer() {
 
         <div className="flex flex-col items-center gap-6">
           <div className="flex gap-6">
-            <a 
-              href="https://github.com/mdsalmangousqadri13" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://github.com/mdsalmangousqadri13"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-zinc-500 hover:text-white transition-colors"
             >
               <Github size={25} />
             </a>
-            <a 
-              href="https://www.linkedin.com/in/mdsalmangous/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://www.linkedin.com/in/mdsalmangous/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-zinc-500 hover:text-white transition-colors"
             >
               <Linkedin size={25} />

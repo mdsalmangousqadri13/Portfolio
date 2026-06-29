@@ -1,19 +1,28 @@
 import { motion } from 'motion/react';
 import { GraduationCap, Calendar, BookOpen } from 'lucide-react';
 
-const education = [
+type EducationItem = {
+  degree: string;
+  institution: string;
+  duration: string;
+  description: string;
+  grade?: string;
+  percentage?: string;
+};
+
+const education: EducationItem[] = [
   {
     degree: 'B.Tech in Computer Science Engineering',
     institution: 'I.K. Guzral Punjab Technical University',
     duration: '2022 - 2026',
-    grade: 'GPA: 8.5/10',
+    // grade: 'GPA: 8.5/10',
     description: 'Specialized in Full Stack Development and Software Engineering principles. Core coursework included Data Structures, Algorithms, DBMS, and OS.',
   },
   {
     degree: 'Intermediate',
     institution: 'K.K.M College, Jamui',
     duration: '2019 - 2021',
-    percentage: '68.8%',
+    // percentage: '68.8%',
     description: 'Completed Intermediate (Science with Mathematics), building a strong foundation in analytical thinking and problem-solving while exploring technology and software development.',
   },
 ];

@@ -5,7 +5,7 @@ const experiences = [
   {
     role: 'Full Stack Development Intern',
     company: 'IPage UM Service',
-    duration: 'Oct 2025 - Jan 2026',
+    duration: 'Oct 2025 - Apr 2026',
     location: 'Hyderabad, Telangana',
     description: [
       'Developed Tapaal, a full-stack MERN application using MongoDB, Express.js, React.js, and Node.js.',
