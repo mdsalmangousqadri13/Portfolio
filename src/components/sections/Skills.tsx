@@ -60,6 +60,7 @@ const skillCategories = [
       { name: 'VS Code', level: 95 },
       { name: 'Docker', level: 70 },
       { name: 'EmailJS', level: 70 },
+      { name: 'eXCEL', level: 95 },
     ]
   }
 ];
