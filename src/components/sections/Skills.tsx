@@ -48,6 +48,7 @@ const skillCategories = [
     skills: [
       { name: 'AWS Lambda', level: 85 },
       { name: 'AWS API Gateway', level: 90 },
+      { name: 'EC2', level: 75 },
     ]
   },
   {
@@ -60,7 +61,7 @@ const skillCategories = [
       { name: 'VS Code', level: 95 },
       { name: 'Docker', level: 70 },
       { name: 'EmailJS', level: 70 },
-      { name: 'eXCEL', level: 95 },
+      { name: 'Excel', level: 95 },
     ]
   }
 ];
